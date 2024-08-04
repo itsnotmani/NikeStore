@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/ic_nike_logo"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/background_et_search"
+                android:drawableEnd="@drawable/ic_search"
+                android:hint="جستجو"
+                android:textSize="15sp"
+                android:textColorHint="?android:textColorSecondary"
+                android:textColor="?colorOnSurface"
+                android:paddingEnd="15dp" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+
+
+
+            </FrameLayout>
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/bannerSliderViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"/>
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp">
+                
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/latest"
+                    android:layout_gravity="center_vertical|start"
+                    android:textAppearance="?textAppearanceHeadline6"
+                    android:textColor="?android:textColorSecondary"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/viewAllLatestProductBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/view_all"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_gravity="end|center_vertical"/>
+                
+            </FrameLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/lastProductRv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:clipToPadding="false"/>
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/papular"
+                    android:layout_gravity="center_vertical|start"
+                    android:textAppearance="?textAppearanceHeadline6"
+                    android:textColor="?android:textColorSecondary"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/viewAllPapularProductBtn"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|center_vertical"
+                    android:text="@string/view_all" />
+
+            </FrameLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/papularProductRv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:clipToPadding="false"/>
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

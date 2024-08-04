@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.nikestore.view.NikeImageView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:roundedCornerRadius="12dp"
+    app:viewAspectRatio="0.93"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp">
+
+
+</com.example.nikestore.view.NikeImageView>
