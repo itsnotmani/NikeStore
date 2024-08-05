@@ -2,7 +2,7 @@
 
 ## Overview
 
-An Android application that is my first large and comprehensive project written in Kotlin, a shoe store app named **NikeStore**. This was the final project of the Android course from the 7Learn website, featuring elements like banners, a shopping cart, user accounts, and other features, developed following the MVVM (Model-View-ViewModel) architecture.
+An Android application that is my first large and comprehensive project developed with kotlin , a shoe store app named **NikeStore**. This was the final project of the Android course from the 7Learn website, featuring elements like banners, a shopping cart, user accounts, and other features, developed following the MVVM (Model-View-ViewModel) architecture.
 
 ## Features
 
