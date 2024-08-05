@@ -6,16 +6,16 @@ import io.reactivex.Completable
 
 class AuthViewModel(private val userRepository: UserRepository) : NikeViewModel() {
 
-    fun login(email: String,password:String): Completable{
-        progressBarLiveData.value = true
-        return userRepository.login(email,password).doFinally(){
-            progressBarLiveData.value = false
+    fun login(email: String, password: String): Completable {
+        progressBarLiveData.postValue(true)
+        return userRepository.login(email, password).doFinally {
+            progressBarLiveData.postValue(false)
         }
     }
 
-    fun signup(email: String,password: String): Completable{
-        progressBarLiveData.value = true
-        return userRepository.signup(email,password).doFinally(){
+    fun signup(email: String, password: String): Completable {
+        progressBarLiveData.postValue(true)
+        return userRepository.signup(email, password).doFinally {
             progressBarLiveData.postValue(false)
         }
     }

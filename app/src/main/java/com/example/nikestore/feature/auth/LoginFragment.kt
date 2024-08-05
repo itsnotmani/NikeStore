@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import com.example.nikestore.R
 import com.example.nikestore.common.NikeCompletableObserver
 import com.example.nikestore.databinding.FragmentLoginBinding
+import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -30,19 +31,25 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.loginBtn.setOnClickListener(){
-            viewModel.login(binding.emailEt.text.toString(),binding.passwordEt.text.toString())
+        binding.loginBtn.setOnClickListener {
+            viewModel.login(binding.emailEt.text.toString(), binding.passwordEt.text.toString())
                 .subscribeOn(Schedulers.io())
-                .subscribe(object : NikeCompletableObserver(compositeDisposable){
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(object : NikeCompletableObserver(compositeDisposable) {
                     override fun onComplete() {
                         requireActivity().finish()
+                    }
+
+                    override fun onError(e: Throwable) {
+                        e.printStackTrace()
                     }
                 })
         }
 
-        binding.signUpLinkBtn.setOnClickListener(){
+        binding.signUpLinkBtn.setOnClickListener {
             requireActivity().supportFragmentManager.beginTransaction().apply {
-                replace(R.id.fragmentContainer,SignUpFragment())
+                replace(R.id.fragmentContainer, SignUpFragment())
+                addToBackStack(null)
             }.commit()
         }
     }
@@ -50,5 +57,6 @@ class LoginFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+        compositeDisposable.dispose()
     }
 }
