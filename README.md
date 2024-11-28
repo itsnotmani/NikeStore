@@ -4,21 +4,6 @@
 
 An Android application that is my first large and comprehensive project developed with kotlin , a shoe store app named **NikeStore**. This was the final project of the Android course from the 7Learn website, featuring elements like banners, a shopping cart, user accounts, and other features, developed following the MVVM (Model-View-ViewModel) architecture.
 
-## Download
-
-**Note:** The app's registration section is currently experiencing issues due to a server problem. You can use the following username and password to access this section:
-
-
-**Username: tesss@gmail.com**
-
-
-**Password: 123456**
-
-
-[Download NikeStore](https://biaupload.com/do.php?filename=org-b923a669363b1.apk)
-
-
-
 ## Features
 
 - **Slider**: Displays promotional images and special offers. The slider allows users to stay informed about the latest and most popular products and discounts and to easily navigate through them.
